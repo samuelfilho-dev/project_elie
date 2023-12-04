@@ -50,27 +50,27 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("2_1r002")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7ac0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gec7l"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7eh6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjf0j"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6n7n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_njc85"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4u66"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnhe4"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtdm4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tljcw"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d1mf2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bqhc"]
 atlas = ExtResource("3_bvs5h")
 region = Rect2(160, 0, 32, 32)
 
@@ -132,22 +132,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w7ac0")
+"texture": SubResource("AtlasTexture_gec7l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p7eh6")
+"texture": SubResource("AtlasTexture_cjf0j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i6n7n")
+"texture": SubResource("AtlasTexture_njc85")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w4u66")
+"texture": SubResource("AtlasTexture_tnhe4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vtdm4")
+"texture": SubResource("AtlasTexture_tljcw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d1mf2")
+"texture": SubResource("AtlasTexture_0bqhc")
 }],
 "loop": true,
 "name": &"running",
@@ -172,5 +172,5 @@ shape = SubResource("RectangleShape2D_wx2rm")
 position = Vector2(53, 21)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_2u7ty")
-animation = &"idle"
-frame_progress = 0.464364
+animation = &"running"
+frame_progress = 0.703324

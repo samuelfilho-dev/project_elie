@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var animaPlayer = $anima_player as AnimatedSprite2D
 
-var GRAVITY = 9.8
+const GRAVITY = 9.8
+
 var direction = 2.25
 
 # Called when the node enters the scene tree for the first time.
@@ -27,14 +28,14 @@ func moveLeft():
 	if direction == 2.25:
 		animaPlayer.scale.x = direction
 		animaPlayer.play("running")
-		velocity.x += 50
+		velocity.x += 25 
 
 func moveRight():
 	direction = -2.25
 	if direction == -2.25:
 		animaPlayer.scale.x = direction
 		animaPlayer.play("running")
-		velocity.x += -50
+		velocity.x += -25
 
 func isOnFloor():
 	if is_on_floor() == false:
@@ -42,7 +43,6 @@ func isOnFloor():
 
 func _process(delta):
 	isOnFloor()
-	normalPosition()
 		
 	if Input.is_key_pressed(KEY_D):
 		moveLeft()
