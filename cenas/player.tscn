@@ -1,11 +1,30 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctdr0xodtbd54"]
+[gd_scene load_steps=26 format=3 uid="uid://ctdr0xodtbd54"]
 
+[ext_resource type="Texture2D" uid="uid://dxkosncvtgikd" path="res://recursos/Sprite Pack 3/2 - Twiggy/Sleeping_&_Wakeup (32 x 32).png" id="1_5iwhg"]
 [ext_resource type="Texture2D" uid="uid://t4vm0bkyae5i" path="res://recursos/Sprite Pack 3/2 - Twiggy/Idle (32 x 32).png" id="1_dufg0"]
 [ext_resource type="Texture2D" uid="uid://2t5aqr0rd32p" path="res://recursos/Sprite Pack 3/2 - Twiggy/Jumping (32 x 32).png" id="2_1r002"]
+[ext_resource type="Texture2D" uid="uid://dyqx8vhgyll71" path="res://recursos/Sprite Pack 3/2 - Twiggy/Falling (32 x 32).png" id="2_4iwwo"]
 [ext_resource type="Texture2D" uid="uid://d0ki71h4e1qpd" path="res://recursos/Sprite Pack 3/2 - Twiggy/Running (32 x 32).png" id="3_bvs5h"]
+[ext_resource type="Texture2D" uid="uid://dng7xvu2ige04" path="res://recursos/Sprite Pack 3/2 - Twiggy/Looking_Upward (32 x 32).png" id="6_2f8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2rm"]
 size = Vector2(43, 58.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6100h"]
+atlas = ExtResource("1_5iwhg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbqp7"]
+atlas = ExtResource("1_5iwhg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bvhe"]
+atlas = ExtResource("1_5iwhg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddcrp"]
+atlas = ExtResource("2_4iwwo")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4vhm"]
 atlas = ExtResource("1_dufg0")
@@ -55,8 +74,34 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("3_bvs5h")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uodss"]
+atlas = ExtResource("6_2f8ur")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2u7ty"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6100h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbqp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bvhe")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddcrp")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p4vhm")
@@ -107,6 +152,14 @@ animations = [{
 "loop": true,
 "name": &"running",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uodss")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -120,4 +173,4 @@ position = Vector2(53, 21)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_2u7ty")
 animation = &"idle"
-frame_progress = 0.210294
+frame_progress = 0.464364
