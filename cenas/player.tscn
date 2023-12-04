@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dng7xvu2ige04" path="res://recursos/Sprite Pack 3/2 - Twiggy/Looking_Upward (32 x 32).png" id="6_2f8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2rm"]
-size = Vector2(43, 58.5)
+size = Vector2(40, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6100h"]
 atlas = ExtResource("1_5iwhg")
@@ -165,12 +165,18 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(52.5, 27.75)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_wx2rm")
 
 [node name="anima_player" type="AnimatedSprite2D" parent="."]
-position = Vector2(53, 21)
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_2u7ty")
-animation = &"running"
-frame_progress = 0.703324
+animation = &"idle"
+frame_progress = 0.85765
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
