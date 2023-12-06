@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c77bt34it6qdi"]
+
+[ext_resource type="Script" path="res://script/hut_box.gd" id="1_5tpmb"]
+
+[node name="hut_box" type="Area2D"]
+script = ExtResource("1_5tpmb")

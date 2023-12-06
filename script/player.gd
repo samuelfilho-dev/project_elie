@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+const ORB = preload("res://characters/items/spell_orbs.tscn")
+
 @onready var animaPlayer = $anima_player as AnimatedSprite2D
+@onready var spellPoint = $spell_point as Marker2D
 
 const GRAVITY = 9.8
 
@@ -28,7 +31,12 @@ func moveLeft():
 	if direction == 2.25:
 		animaPlayer.scale.x = direction
 		animaPlayer.play("running")
-		velocity.x += 25 
+		velocity.x += 25
+	
+	if sign(spellPoint.position.x) == -1:
+		spellPoint.position.x *= -1
+	
+	
 
 func moveRight():
 	direction = -2.25
@@ -36,14 +44,38 @@ func moveRight():
 		animaPlayer.scale.x = direction
 		animaPlayer.play("running")
 		velocity.x += -25
+		
+	if sign(spellPoint.position.x) == 1:
+		spellPoint.position.x *= -1
+
+func spell_lauch():
+	var spell_instance = ORB.instantiate()
+	
+	if sign(spellPoint.position.x) == 1:
+		spell_instance.set_direction(1)
+	else:
+		spell_instance.set_direction(-1)
+	
+	add_child(spell_instance)
+	spell_instance.position = spellPoint.transform.origin
+	
+	var target = get_global_mouse_position()
+	spell_instance.target = target
+	
 
 func isOnFloor():
 	if is_on_floor() == false:
 		velocity.y += GRAVITY
 
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			spell_lauch()
+		
+
 func _process(delta):
 	isOnFloor()
-		
+	
 	if Input.is_key_pressed(KEY_D):
 		moveLeft()
 	elif Input.is_key_pressed(KEY_A):

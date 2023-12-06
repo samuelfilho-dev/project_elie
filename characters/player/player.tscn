@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ctdr0xodtbd54"]
+[gd_scene load_steps=28 format=3 uid="uid://ctdr0xodtbd54"]
 
 [ext_resource type="Texture2D" uid="uid://dxkosncvtgikd" path="res://recursos/Sprite Pack 3/2 - Twiggy/Sleeping_&_Wakeup (32 x 32).png" id="1_5iwhg"]
 [ext_resource type="Texture2D" uid="uid://t4vm0bkyae5i" path="res://recursos/Sprite Pack 3/2 - Twiggy/Idle (32 x 32).png" id="1_dufg0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dyqx8vhgyll71" path="res://recursos/Sprite Pack 3/2 - Twiggy/Falling (32 x 32).png" id="2_4iwwo"]
 [ext_resource type="Texture2D" uid="uid://d0ki71h4e1qpd" path="res://recursos/Sprite Pack 3/2 - Twiggy/Running (32 x 32).png" id="3_bvs5h"]
 [ext_resource type="Texture2D" uid="uid://dng7xvu2ige04" path="res://recursos/Sprite Pack 3/2 - Twiggy/Looking_Upward (32 x 32).png" id="6_2f8ur"]
+[ext_resource type="PackedScene" uid="uid://c77bt34it6qdi" path="res://areas/hut_box.tscn" id="7_mtidp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2rm"]
 size = Vector2(40, 56)
@@ -162,7 +163,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl46o"]
+size = Vector2(47, 50)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 57
+collision_mask = 22
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -172,7 +178,7 @@ shape = SubResource("RectangleShape2D_wx2rm")
 scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_2u7ty")
 animation = &"idle"
-frame_progress = 0.665342
+frame_progress = 0.253776
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -180,3 +186,15 @@ limit_left = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="hut_box" parent="." instance=ExtResource("7_mtidp")]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hut_box"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_gl46o")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="spell_point" type="Marker2D" parent="."]
+position = Vector2(16, 22)

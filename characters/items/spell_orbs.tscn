@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://csdhauufutihp"]
+
+[ext_resource type="Texture2D" uid="uid://c0a0wna6f6f1l" path="res://recursos/Sprite Pack 5/2 - Lil Wiz/Magical_Orbs_Spell_(32 x 32).png" id="1_0jld3"]
+[ext_resource type="Script" path="res://script/spell_orbs.gd" id="1_24e7i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrlv8"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n2f8"]
+atlas = ExtResource("1_0jld3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdryp"]
+atlas = ExtResource("1_0jld3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hap7c"]
+atlas = ExtResource("1_0jld3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hymeb"]
+atlas = ExtResource("1_0jld3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1q0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n2f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdryp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hap7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hymeb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="spell_orbs" type="Area2D"]
+position = Vector2(124, 266)
+script = ExtResource("1_24e7i")
+
+[node name="Collisior" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jrlv8")
+
+[node name="anima" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q1q0y")
+animation = &"idle"
+frame_progress = 0.719171
+
+[node name="visibility" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]

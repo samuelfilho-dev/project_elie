@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c85f31gsxlm2p"]
+[gd_scene load_steps=17 format=3 uid="uid://c85f31gsxlm2p"]
 
 [ext_resource type="Texture2D" uid="uid://40fuoydhkpsc" path="res://recursos/Seasonal Tilesets/4 - Winter World/Terrain (16 x 16).png" id="1_end35"]
 [ext_resource type="PackedScene" uid="uid://ctdr0xodtbd54" path="res://characters/player/player.tscn" id="1_iwr50"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b0wj8xwsov4fr" path="res://recursos/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="7_2m4vc"]
 [ext_resource type="PackedScene" uid="uid://d1yu1dni554j" path="res://characters/items/coin.tscn" id="10_1xb24"]
 [ext_resource type="PackedScene" uid="uid://dbwmxete14yro" path="res://characters/enemy/enemy.tscn" id="10_2hchr"]
+[ext_resource type="PackedScene" uid="uid://2q7syfpu5mwd" path="res://characters/items/mira.tscn" id="12_36g1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ceb5"]
 texture = ExtResource("1_end35")
@@ -301,3 +302,5 @@ centered = false
 
 [node name="enemy" parent="." instance=ExtResource("10_2hchr")]
 position = Vector2(620, 505)
+
+[node name="mira" parent="." instance=ExtResource("12_36g1g")]
