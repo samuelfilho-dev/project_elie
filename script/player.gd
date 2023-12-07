@@ -56,8 +56,8 @@ func spell_lauch():
 	else:
 		spell_instance.set_direction(-1)
 	
-	add_child(spell_instance)
-	spell_instance.position = spellPoint.transform.origin
+	get_parent().add_child(spell_instance)
+	spell_instance.position = spellPoint.global_position
 	
 	var target = get_global_mouse_position()
 	spell_instance.target = target
