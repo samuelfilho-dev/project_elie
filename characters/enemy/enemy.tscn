@@ -55,13 +55,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_x1c1r"]
 radius = 17.0294
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf02a"]
-size = Vector2(26, 5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5nbk"]
+size = Vector2(32, 23.5)
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(622, 414)
 collision_layer = 4
-collision_mask = 55
+collision_mask = 118
 script = ExtResource("1_ankug")
 
 [node name="anime" type="AnimatedSprite2D" parent="."]
@@ -82,7 +82,7 @@ collision_mask = 7
 
 [node name="hit_box" parent="." instance=ExtResource("5_ftgjy")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
-position = Vector2(-13, -22)
-shape = SubResource("RectangleShape2D_xf02a")
-debug_color = Color(1, 0, 0.117647, 0.419608)
+[node name="colision" type="CollisionShape2D" parent="hit_box"]
+position = Vector2(-13, -11.75)
+shape = SubResource("RectangleShape2D_y5nbk")
+debug_color = Color(0.988235, 0, 0.317647, 0.419608)

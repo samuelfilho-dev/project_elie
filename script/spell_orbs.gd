@@ -20,9 +20,9 @@ func _process(delta):
 	velocity = direction * SPEED * delta
 	translate(velocity)
 
-
 func _on_visibility_screen_exited():
 	queue_free()
+
 
 
 func _on_area_entered(area):

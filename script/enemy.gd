@@ -34,3 +34,4 @@ func _process(delta):
 	animaEnemy.play("walking")
 	
 	move_and_slide()
+

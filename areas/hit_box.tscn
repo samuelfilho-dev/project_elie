@@ -4,6 +4,7 @@
 
 [node name="hit_box" type="Area2D"]
 collision_layer = 16
+collision_mask = 64
 script = ExtResource("1_w78sk")
 
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

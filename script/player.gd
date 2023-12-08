@@ -4,6 +4,7 @@ const ORB = preload("res://characters/items/spell_orbs.tscn")
 
 @onready var animaPlayer = $anima_player as AnimatedSprite2D
 @onready var spellPoint = $spell_point as Marker2D
+@onready var cooldown = $cooldown as Timer
 
 const GRAVITY = 9.8
 
@@ -50,17 +51,18 @@ func moveRight():
 
 func spell_lauch():
 	var spell_instance = ORB.instantiate()
-	
 	if sign(spellPoint.position.x) == 1:
 		spell_instance.set_direction(1)
 	else:
 		spell_instance.set_direction(-1)
 	
-	get_parent().add_child(spell_instance)
+	add_sibling(spell_instance)
 	spell_instance.position = spellPoint.global_position
 	
 	var target = get_global_mouse_position()
 	spell_instance.target = target
+	
+	cooldown.start()
 	
 
 func isOnFloor():
@@ -70,8 +72,9 @@ func isOnFloor():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			spell_lauch()
-		
+			if cooldown.is_stopped():
+				spell_lauch()
+
 
 func _process(delta):
 	isOnFloor()
