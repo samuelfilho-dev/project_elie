@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="projeto_elie"
-run/main_scene="res://cenas/fase_1.tscn"
+run/main_scene="res://cenas/tela_incial.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

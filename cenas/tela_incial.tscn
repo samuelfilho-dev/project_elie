@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c73tvxcdqpmnp"]
+
+[ext_resource type="Script" path="res://script/tela_incial.gd" id="1_s7xdi"]
+
+[node name="tela_incial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7xdi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 148.0
+offset_right = 1063.0
+offset_bottom = 277.0
+text = "Elie"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 397.0
+offset_right = 621.0
+offset_bottom = 428.0
+text = "New Game
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,11 +1,10 @@
 extends Area2D
 
-const SPEED := 10
+const SPEED := 100
 
 var velocity := Vector2.ZERO
 var target := Vector2.ZERO
 var direction := 1
-var dir_unica := true
 
 func set_direction(dir):
 	direction = dir
@@ -17,15 +16,14 @@ func set_direction(dir):
 func _process(delta):
 	$anima.play("idle")
 	
-	if dir_unica:
-		look_at(get_global_mouse_position())
-		dir_unica = false
-	
 	var direction = (target - position).normalized()
-	velocity = direction * SPEED
+	velocity = direction * SPEED * delta
 	translate(velocity)
-	
 
 
 func _on_visibility_screen_exited():
+	queue_free()
+
+
+func _on_area_entered(area):
 	queue_free()

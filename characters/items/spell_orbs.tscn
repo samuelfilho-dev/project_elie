@@ -56,4 +56,5 @@ frame_progress = 0.719171
 
 [node name="visibility" type="VisibleOnScreenEnabler2D" parent="."]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
