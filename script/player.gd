@@ -4,11 +4,12 @@ const ORB = preload("res://characters/items/spell_orbs.tscn")
 
 @onready var animaPlayer = $anima_player as AnimatedSprite2D
 @onready var spellPoint = $spell_point as Marker2D
+@onready var playerLight = $Light as Light2D
 @onready var cooldown = $cooldown as Timer
 
 const GRAVITY = 9.8
 
-var direction = 2.25
+var direction = 0.155
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,10 +29,11 @@ func moveJummping():
 	animaPlayer.play("jump")
 
 func moveLeft():
-	direction = 2.25
-	if direction == 2.25:
+	direction = 0.155
+	if direction == 0.155:
 		animaPlayer.scale.x = direction
-		animaPlayer.play("running")
+		playerLight.position.x = 142
+		animaPlayer.play("walking")
 		velocity.x += 25
 	
 	if sign(spellPoint.position.x) == -1:
@@ -40,10 +42,11 @@ func moveLeft():
 	
 
 func moveRight():
-	direction = -2.25
-	if direction == -2.25:
+	direction = -0.155
+	if direction == -0.155:
 		animaPlayer.scale.x = direction
-		animaPlayer.play("running")
+		playerLight.position.x = -142
+		animaPlayer.play("walking")
 		velocity.x += -25
 		
 	if sign(spellPoint.position.x) == 1:

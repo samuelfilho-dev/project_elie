@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://v1oftl7jibwt"]
+
+[ext_resource type="Texture2D" uid="uid://c17ttjqk8nbmi" path="res://recursos/Projeto_Extinction/back_ground_cutscene.jpg" id="1_n22c6"]
+[ext_resource type="Script" path="res://script/dialog_Box.gd" id="2_evpgb"]
+[ext_resource type="Texture2D" uid="uid://wccyjdxlq2xn" path="res://recursos/Pixel Adventure 1/Background/Gray.png" id="2_ixk7o"]
+
+[node name="cut_scene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(581.218, 329)
+scale = Vector2(0.303816, 0.363636)
+texture = ExtResource("1_n22c6")
+
+[node name="Dialog_Box" type="NinePatchRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_top = 479.0
+offset_right = 1109.0
+offset_bottom = 629.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture = ExtResource("2_ixk7o")
+script = ExtResource("2_evpgb")
+
+[node name="Text" type="RichTextLabel" parent="Dialog_Box"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -504.0
+offset_top = -129.0
+offset_right = 502.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="Dialog_Box"]
+wait_time = 0.1
+
+[connection signal="timeout" from="Dialog_Box/Timer" to="Dialog_Box" method="_on_timer_timeout"]
