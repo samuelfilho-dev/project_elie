@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5i70o3cxsvq2"]
+
+[ext_resource type="AudioStream" uid="uid://d03al2j2e7kbr" path="res://recursos/Projeto_Extinction/music/music_title_cutscene.wav" id="1_rx8kf"]
+
+[node name="musica_title_cutscene" type="AudioStreamPlayer"]
+stream = ExtResource("1_rx8kf")
+autoplay = true

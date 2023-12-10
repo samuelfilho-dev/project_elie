@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqkul26psxy8j"]
+
+[ext_resource type="AudioStream" uid="uid://mydna2rycrap" path="res://recursos/Projeto_Extinction/music/tela_inicial_ost.wav" id="1_281cr"]
+
+[node name="musica_tela_incial" type="AudioStreamPlayer"]
+stream = ExtResource("1_281cr")
+autoplay = true

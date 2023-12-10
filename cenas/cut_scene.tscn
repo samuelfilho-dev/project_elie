@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://v1oftl7jibwt"]
+[gd_scene load_steps=5 format=3 uid="uid://v1oftl7jibwt"]
 
 [ext_resource type="Texture2D" uid="uid://c17ttjqk8nbmi" path="res://recursos/Projeto_Extinction/back_ground_cutscene.jpg" id="1_n22c6"]
 [ext_resource type="Script" path="res://script/dialog_Box.gd" id="2_evpgb"]
 [ext_resource type="Texture2D" uid="uid://wccyjdxlq2xn" path="res://recursos/Pixel Adventure 1/Background/Gray.png" id="2_ixk7o"]
+[ext_resource type="PackedScene" uid="uid://bvhekuwejncbn" path="res://characters/musicas/cut_scene_music.tscn" id="4_qwcjg"]
 
 [node name="cut_scene" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(581.218, 329)
-scale = Vector2(0.303816, 0.363636)
+position = Vector2(581.218, 325)
+scale = Vector2(0.303816, 0.359174)
 texture = ExtResource("1_n22c6")
 
 [node name="Dialog_Box" type="NinePatchRect" parent="."]
@@ -44,5 +45,7 @@ bbcode_enabled = true
 
 [node name="Timer" type="Timer" parent="Dialog_Box"]
 wait_time = 0.1
+
+[node name="cut_scene_music" parent="." instance=ExtResource("4_qwcjg")]
 
 [connection signal="timeout" from="Dialog_Box/Timer" to="Dialog_Box" method="_on_timer_timeout"]

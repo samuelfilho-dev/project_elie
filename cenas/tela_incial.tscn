@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c73tvxcdqpmnp"]
+[gd_scene load_steps=5 format=3 uid="uid://c73tvxcdqpmnp"]
 
 [ext_resource type="Script" path="res://script/tela_incial.gd" id="1_s7xdi"]
+[ext_resource type="Texture2D" uid="uid://d16q02u4l4s6p" path="res://recursos/Projeto_Extinction/Capa_Jogo.png" id="2_xhtxt"]
+[ext_resource type="PackedScene" uid="uid://dqkul26psxy8j" path="res://characters/musicas/musica_tela_incial.tscn" id="3_5f7g7"]
+[ext_resource type="FontFile" uid="uid://dsrkig6nj5wqv" path="res://recursos/Projeto_Extinction/fonts/Gamer.ttf" id="3_30hko"]
 
 [node name="tela_incial" type="Control"]
 layout_mode = 3
@@ -11,21 +14,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s7xdi")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 148.0
-offset_right = 1063.0
-offset_bottom = 277.0
-text = "Elie"
+[node name="backGround" type="Sprite2D" parent="."]
+position = Vector2(578.5, 375.546)
+scale = Vector2(0.407709, 0.296002)
+texture = ExtResource("2_xhtxt")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 397.0
-offset_right = 621.0
-offset_bottom = 428.0
-text = "New Game
-"
+offset_left = 462.0
+offset_top = 583.0
+offset_right = 713.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("3_30hko")
+theme_override_font_sizes/font_size = 50
+text = "NOVO JOGO"
+
+[node name="musica_tela_incial" parent="." instance=ExtResource("3_5f7g7")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
