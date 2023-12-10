@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c17ttjqk8nbmi"
-path="res://.godot/imported/back_ground_cutscene.jpg-d1b159508318b86838fd0182ed3f7369.ctex"
+uid="uid://crfq0kfkd0y0s"
+path="res://.godot/imported/dialog_background.png-8e93b792bbb3a7218d756df204f26c80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/Projeto_Extinction/back_ground_cutscene.jpg"
-dest_files=["res://.godot/imported/back_ground_cutscene.jpg-d1b159508318b86838fd0182ed3f7369.ctex"]
+source_file="res://recursos/Projeto_Extinction/backgrounds/dialog_background.png"
+dest_files=["res://.godot/imported/dialog_background.png-8e93b792bbb3a7218d756df204f26c80.ctex"]
 
 [params]
 

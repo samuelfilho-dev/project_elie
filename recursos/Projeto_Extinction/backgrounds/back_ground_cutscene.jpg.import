@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d16q02u4l4s6p"
-path="res://.godot/imported/Capa_Jogo.png-1091f4edaa193e06dc9855c4ffa8f296.ctex"
+uid="uid://c17ttjqk8nbmi"
+path="res://.godot/imported/back_ground_cutscene.jpg-be57a31ffc04c939837561e6869489b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/Projeto_Extinction/Capa_Jogo.png"
-dest_files=["res://.godot/imported/Capa_Jogo.png-1091f4edaa193e06dc9855c4ffa8f296.ctex"]
+source_file="res://recursos/Projeto_Extinction/backgrounds/back_ground_cutscene.jpg"
+dest_files=["res://.godot/imported/back_ground_cutscene.jpg-be57a31ffc04c939837561e6869489b9.ctex"]
 
 [params]
 
