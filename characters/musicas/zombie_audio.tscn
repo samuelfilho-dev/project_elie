@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btibh80wkh5cq"]
+
+[ext_resource type="AudioStream" uid="uid://cx32oeswljnr2" path="res://recursos/Projeto_Extinction/effect_sound/zombie_effect.mp3" id="1_lwf2i"]
+
+[node name="zombie_audio" type="AudioStreamPlayer"]
+stream = ExtResource("1_lwf2i")

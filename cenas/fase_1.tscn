@@ -930,7 +930,7 @@ position = Vector2(-3, 5)
 color = Color(0.0196078, 0, 0.137255, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_iwr50")]
-position = Vector2(910, 182)
+position = Vector2(284, 180)
 scale = Vector2(1.44, 1.44)
 
 [node name="change_area" type="Area2D" parent="."]
@@ -941,14 +941,13 @@ position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_bxi67")
 
 [node name="music_fase_1" parent="." instance=ExtResource("5_5ig8p")]
-volume_db = 14.857
 
 [node name="enemy" parent="." instance=ExtResource("10_2hchr")]
-position = Vector2(723, 181)
+position = Vector2(1201, 182)
 scale = Vector2(0.05, 0.05)
 
 [node name="enemy8" parent="." instance=ExtResource("10_2hchr")]
-position = Vector2(1634, 181)
+position = Vector2(1293, 180)
 scale = Vector2(0.05, 0.05)
 
 [node name="enemy9" parent="." instance=ExtResource("10_2hchr")]
@@ -956,7 +955,7 @@ position = Vector2(1672, 181)
 scale = Vector2(0.05, 0.05)
 
 [node name="enemy10" parent="." instance=ExtResource("10_2hchr")]
-position = Vector2(1597, 181)
+position = Vector2(1244, 183)
 scale = Vector2(0.05, 0.05)
 
 [node name="enemy2" parent="." instance=ExtResource("10_2hchr")]
