@@ -84,3 +84,7 @@ func _process(delta):
 		
 	
 	move_and_slide()
+
+
+func _on_change_area_body_entered(body):
+	print(body.name)

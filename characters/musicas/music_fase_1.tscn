@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wg6f51dovbgv"]
+
+[ext_resource type="AudioStream" uid="uid://cy6cy0u85gl34" path="res://recursos/Projeto_Extinction/music/ost_fase_1.wav" id="1_hooiw"]
+
+[node name="music_fase_1" type="AudioStreamPlayer"]
+stream = ExtResource("1_hooiw")
+autoplay = true
