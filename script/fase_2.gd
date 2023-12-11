@@ -2,6 +2,7 @@ extends Node2D
 
 const _DIALOG_SCREEN: PackedScene = preload("res://characters/npc/dialog_box_npc.tscn")
 
+
 var _dialog_data: Dictionary = {
 	0: {
 		"faceset": "res://recursos/Sprite Pack 7/1 - Diego/Standing (32 x 48).png",
@@ -36,14 +37,6 @@ var _dialog_data: Dictionary = {
 
 @export_category("Objects")
 @export var _hud: CanvasLayer = null
-
-func _ready():
-	$open_door.play()
-
-
-
-func _process(delta):
-	pass
 
 
 func _on_exit_area_body_entered(body):

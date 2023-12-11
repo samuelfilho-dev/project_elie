@@ -930,7 +930,7 @@ position = Vector2(-3, 5)
 color = Color(0.0196078, 0, 0.137255, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_iwr50")]
-position = Vector2(1512, 181)
+position = Vector2(910, 182)
 scale = Vector2(1.44, 1.44)
 
 [node name="change_area" type="Area2D" parent="."]

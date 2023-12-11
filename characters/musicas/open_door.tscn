@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://75i5teravl2s"]
+
+[ext_resource type="AudioStream" uid="uid://c6pj55juy3u2s" path="res://recursos/Projeto_Extinction/effect_sound/open_door.mp3" id="1_v55qd"]
+
+[node name="open_door" type="AudioStreamPlayer"]
+stream = ExtResource("1_v55qd")
