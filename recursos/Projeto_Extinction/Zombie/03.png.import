@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdb7toy4wosi"
-path="res://.godot/imported/Hurt (16 x 16).png-416f39ab183102a0339b7aaf526ea0d9.ctex"
+uid="uid://bj2bf2fkpwqip"
+path="res://.godot/imported/03.png-6df71edaf72cd6d355569facad80bd90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recursos/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png"
-dest_files=["res://.godot/imported/Hurt (16 x 16).png-416f39ab183102a0339b7aaf526ea0d9.ctex"]
+source_file="res://recursos/Projeto_Extinction/Zombie/03.png"
+dest_files=["res://.godot/imported/03.png-6df71edaf72cd6d355569facad80bd90.ctex"]
 
 [params]
 

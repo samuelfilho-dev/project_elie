@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var wallDetector = $wall_detector as RayCast2D
 
 const GRAVITY = 9.8
-const ENEMY_SPEED = 700
+const ENEMY_SPEED = 100
 
-var direction = -1 
+var direction = -1
 
 func isOnFloor():
 	if is_on_floor() == false:
@@ -23,12 +23,12 @@ func wallDec():
 func _process(delta):
 	isOnFloor()
 	
-	wallDec()
+	#wallDec()
 	
 	if direction == 1:
-		$texture.flip_h = true
-	else:
 		$texture.flip_h = false
+	else:
+		$texture.flip_h = true
 	
 	velocity.x = direction * ENEMY_SPEED * delta
 	$anim.play("idle")

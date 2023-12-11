@@ -9,63 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://386ocr1sfuu3" path="res://recursos/Projeto_Extinction/Character/Walking/all_walk.png" id="11_8di1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2rm"]
-size = Vector2(12.6159, 17.2918)
+size = Vector2(8.76102, 16.3817)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl46o"]
-size = Vector2(18, 36.5)
-
-[sub_resource type="Animation" id="Animation_2mo0g"]
-resource_name = "walking"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("11_8di1e")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 3]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("animator/walk_sound:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
+size = Vector2(35, 38.25)
 
 [sub_resource type="Animation" id="Animation_bb1y2"]
 length = 0.001
@@ -159,6 +106,59 @@ tracks/2/keys = {
 "values": [0, 1]
 }
 
+[sub_resource type="Animation" id="Animation_2mo0g"]
+resource_name = "walking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_8di1e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animator/walk_sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wj3tn"]
 _data = {
 "RESET": SubResource("Animation_bb1y2"),
@@ -176,19 +176,18 @@ texture = ExtResource("11_8di1e")
 hframes = 4
 
 [node name="colision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.999999, 0.99999)
+position = Vector2(0.5, 1)
 rotation = -3.14159
 scale = Vector2(2.85355, -2.19757)
 shape = SubResource("RectangleShape2D_wx2rm")
 
 [node name="hut_box" parent="." instance=ExtResource("7_mtidp")]
 position = Vector2(0, -4.54747e-13)
-scale = Vector2(1, 1)
-collision_layer = 0
+collision_layer = 32
 collision_mask = 4
 
 [node name="colision" type="CollisionShape2D" parent="hut_box"]
-position = Vector2(0, 1)
+position = Vector2(-0.5, 0.124991)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_gl46o")
 debug_color = Color(1, 0, 0, 0.419608)
@@ -229,3 +228,5 @@ stream = ExtResource("6_5d5np")
 
 [node name="cooldown" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="body_entered" from="hut_box" to="hut_box" method="_on_body_entered"]
