@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcil2dyjptqyo"]
+
+[ext_resource type="AudioStream" uid="uid://dt83lsnxj4e05" path="res://recursos/Projeto_Extinction/music/ost_credits.wav" id="1_3qy58"]
+
+[node name="music_credits" type="AudioStreamPlayer"]
+stream = ExtResource("1_3qy58")
+autoplay = true

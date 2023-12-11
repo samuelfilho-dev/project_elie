@@ -619,7 +619,7 @@ shape = SubResource("RectangleShape2D_54b6h")
 [node name="ost_fase_2" parent="." instance=ExtResource("7_4irjb")]
 
 [node name="Player" parent="." instance=ExtResource("4_tdv6v")]
-position = Vector2(34, 492)
+position = Vector2(2652, 557)
 
 [node name="enemy" parent="." instance=ExtResource("8_blsqm")]
 position = Vector2(497, 480)
