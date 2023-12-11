@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animaEnemy = $anime as AnimatedSprite2D
+@onready var animaEnemy = $anim as AnimatedSprite2D
 @onready var wallDetector = $wall_detector as RayCast2D
 
 const GRAVITY = 9.8
@@ -26,12 +26,12 @@ func _process(delta):
 	wallDec()
 	
 	if direction == 1:
-		animaEnemy.scale.x = -2.25
+		$texture.flip_h = true
 	else:
-		animaEnemy.scale.x = 2.25
+		$texture.flip_h = false
 	
 	velocity.x = direction * ENEMY_SPEED * delta
-	animaEnemy.play("walking")
+	$anim.play("idle")
 	
 	move_and_slide()
 
