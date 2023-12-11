@@ -1,88 +1,195 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctdr0xodtbd54"]
+[gd_scene load_steps=14 format=3 uid="uid://ctdr0xodtbd54"]
 
-[ext_resource type="Texture2D" uid="uid://bpll2wramlwly" path="res://recursos/Projeto_Extinction/Character/Pause/Pause01.png" id="1_tc667"]
-[ext_resource type="Texture2D" uid="uid://bxg5qooaulmiy" path="res://recursos/Projeto_Extinction/Character/Pause/Pause02.png" id="2_gssvi"]
-[ext_resource type="Texture2D" uid="uid://ksfpej8j3ajy" path="res://recursos/Projeto_Extinction/Character/Walking/Walking01.png" id="3_ib25g"]
-[ext_resource type="Texture2D" uid="uid://bt8rnv7enffik" path="res://recursos/Projeto_Extinction/Character/Walking/Walking02.png" id="4_lvcfj"]
-[ext_resource type="Texture2D" uid="uid://bynceii767mbp" path="res://recursos/Projeto_Extinction/Character/Walking/Walking03.png" id="5_vndkg"]
-[ext_resource type="Texture2D" uid="uid://dj4ykf3ah05hi" path="res://recursos/Projeto_Extinction/Character/Walking/Walking04.png" id="6_mmw74"]
+[ext_resource type="Script" path="res://script/player.gd" id="1_ffryk"]
+[ext_resource type="Texture2D" uid="uid://cyqv18fco8rrn" path="res://recursos/Projeto_Extinction/Character/Pause/all_pause.png" id="5_p2s3w"]
 [ext_resource type="PackedScene" uid="uid://c77bt34it6qdi" path="res://areas/hut_box.tscn" id="7_mtidp"]
-[ext_resource type="Texture2D" uid="uid://w0r0fhr267fo" path="res://recursos/Projeto_Extinction/light.jpg" id="8_opqsw"]
+[ext_resource type="Texture2D" uid="uid://w0r0fhr267fo" path="res://recursos/Projeto_Extinction/textures/light.jpg" id="8_opqsw"]
+[ext_resource type="AudioStream" path="res://recursos/Projeto_Extinction/effec_sound/one_walk_sound.mp3" id="9_8ov4r"]
+[ext_resource type="AudioStream" path="res://recursos/Projeto_Extinction/effec_sound/shoot_sound.mp3" id="9_kww11"]
+[ext_resource type="Texture2D" uid="uid://386ocr1sfuu3" path="res://recursos/Projeto_Extinction/Character/Walking/all_walk.png" id="11_8di1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx2rm"]
-size = Vector2(43, 43)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2u7ty"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_tc667")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_gssvi")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ib25g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_lvcfj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_vndkg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_mmw74")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 5.0
-}]
+size = Vector2(12.6159, 17.2918)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl46o"]
-size = Vector2(27, 43)
+size = Vector2(18, 36.5)
+
+[sub_resource type="Animation" id="Animation_2mo0g"]
+resource_name = "walking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_8di1e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3]
+}
+
+[sub_resource type="Animation" id="Animation_bb1y2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_8di1e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fneqe"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_p2s3w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wj3tn"]
+_data = {
+"RESET": SubResource("Animation_bb1y2"),
+"idle": SubResource("Animation_fneqe"),
+"walking": SubResource("Animation_2mo0g")
+}
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 63
+script = ExtResource("1_ffryk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 7.5)
+[node name="texture" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("11_8di1e")
+hframes = 4
+
+[node name="colision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999999, 0.99999)
+rotation = -3.14159
+scale = Vector2(2.85355, -2.19757)
 shape = SubResource("RectangleShape2D_wx2rm")
 
-[node name="anima_player" type="AnimatedSprite2D" parent="."]
-position = Vector2(3.125, 9.125)
-scale = Vector2(0.155469, 0.155469)
-sprite_frames = SubResource("SpriteFrames_2u7ty")
-animation = &"walking"
-frame_progress = 0.651693
+[node name="hut_box" parent="." instance=ExtResource("7_mtidp")]
+position = Vector2(0, -4.54747e-13)
+scale = Vector2(1, 1)
+collision_layer = 0
+collision_mask = 4
+
+[node name="colision" type="CollisionShape2D" parent="hut_box"]
+position = Vector2(0, 1)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_gl46o")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wj3tn")
+}
+speed_scale = 0.3
+
+[node name="walk_sound" type="AudioStreamPlayer2D" parent="animator"]
+stream = ExtResource("9_8ov4r")
+volume_db = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3.5, 3.5)
 limit_left = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="hut_box" parent="." instance=ExtResource("7_mtidp")]
-collision_layer = 0
-collision_mask = 4
-
-[node name="colision" type="CollisionShape2D" parent="hut_box"]
-position = Vector2(1.5, 7.5)
-shape = SubResource("RectangleShape2D_gl46o")
-debug_color = Color(1, 0, 0, 0.419608)
-
-[node name="spell_point" type="Marker2D" parent="."]
-position = Vector2(16, 22)
-
 [node name="Light" type="PointLight2D" parent="."]
-position = Vector2(142, 7)
-scale = Vector2(0.42, 0.1)
-color = Color(0.54902, 0.54902, 0, 0.560784)
+position = Vector2(45, 2)
+scale = Vector2(0.162222, 0.0386243)
+color = Color(0.486275, 0.486275, 0, 0.560784)
 energy = 7.62
 shadow_enabled = true
 shadow_filter = 1
@@ -90,6 +197,13 @@ shadow_filter_smooth = 30.0
 texture = ExtResource("8_opqsw")
 texture_scale = 4.0
 
+[node name="spell_point" type="Marker2D" parent="."]
+position = Vector2(13, 7)
+
+[node name="gun_shot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_kww11")
+
 [node name="cooldown" type="Timer" parent="."]
-wait_time = 0.1
 one_shot = true
+
+[node name="music_timer" type="Timer" parent="."]

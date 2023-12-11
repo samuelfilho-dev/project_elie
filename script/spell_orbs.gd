@@ -19,6 +19,7 @@ func _process(delta):
 	var direction = (target - position).normalized()
 	velocity = direction * SPEED * delta
 	translate(velocity)
+	
 
 func _on_visibility_screen_exited():
 	queue_free()

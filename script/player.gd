@@ -2,39 +2,31 @@ extends CharacterBody2D
 
 const ORB = preload("res://characters/items/spell_orbs.tscn")
 
-@onready var animaPlayer = $anima_player as AnimatedSprite2D
+@onready var anime = $animator as AnimationPlayer
 @onready var spellPoint = $spell_point as Marker2D
 @onready var playerLight = $Light as Light2D
 @onready var cooldown = $cooldown as Timer
+@onready var musicTimer = $music_timer as Timer
+@onready var gunShot = $gun_shot as AudioStreamPlayer2D
 
 const GRAVITY = 9.8
 
-var direction = 0.155
+var direction := 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func normalPosition():
-	animaPlayer.play("idle")
+	anime.play("idle")
 
-func moveUp():
-	animaPlayer.play("up")
-
-func moveDown():
-	animaPlayer.play("down")
-
-func moveJummping():
-	velocity.y += -300
-	animaPlayer.play("jump")
 
 func moveLeft():
-	direction = 0.155
-	if direction == 0.155:
-		animaPlayer.scale.x = direction
-		playerLight.position.x = 142
-		animaPlayer.play("walking")
-		velocity.x += 25
+	velocity.x = 30
+	anime.play("walking")
+	
+	$texture.flip_h = false
+	playerLight.position.x = 45
 	
 	if sign(spellPoint.position.x) == -1:
 		spellPoint.position.x *= -1
@@ -42,12 +34,11 @@ func moveLeft():
 	
 
 func moveRight():
-	direction = -0.155
-	if direction == -0.155:
-		animaPlayer.scale.x = direction
-		playerLight.position.x = -142
-		animaPlayer.play("walking")
-		velocity.x += -25
+	velocity.x = -30
+	anime.play("walking")
+	
+	$texture.flip_h = true
+	playerLight.position.x = -45
 		
 	if sign(spellPoint.position.x) == 1:
 		spellPoint.position.x *= -1
@@ -65,6 +56,7 @@ func spell_lauch():
 	var target = get_global_mouse_position()
 	spell_instance.target = target
 	
+	gunShot.play()
 	cooldown.start()
 	
 
@@ -86,16 +78,9 @@ func _process(delta):
 		moveLeft()
 	elif Input.is_key_pressed(KEY_A):
 		moveRight()
-	elif Input.is_key_pressed(KEY_W):
-		moveUp()
-	elif Input.is_key_pressed(KEY_S):
-		moveDown()
 	else:
 		velocity.x = 0
 		normalPosition()
-	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		moveJummping()
 		
 	
 	move_and_slide()

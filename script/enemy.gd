@@ -27,7 +27,7 @@ func _process(delta):
 	
 	if direction == 1:
 		animaEnemy.scale.x = -2.25
-	else :
+	else:
 		animaEnemy.scale.x = 2.25
 	
 	velocity.x = direction * ENEMY_SPEED * delta
