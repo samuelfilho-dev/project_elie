@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 2d_physics/layer_5="hit_box"
 2d_physics/layer_6="hut_box"
 2d_physics/layer_7="bullet"
+2d_physics/layer_8="npc"
 
 [rendering]
 
