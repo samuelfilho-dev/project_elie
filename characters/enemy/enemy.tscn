@@ -56,7 +56,7 @@ animations = [{
 radius = 17.0294
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5nbk"]
-size = Vector2(32, 23.5)
+size = Vector2(38, 23.5)
 
 [node name="enemy" type="CharacterBody2D"]
 position = Vector2(622, 414)

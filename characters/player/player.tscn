@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctdr0xodtbd54"]
+[gd_scene load_steps=14 format=3 uid="uid://ctdr0xodtbd54"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_ffryk"]
 [ext_resource type="Texture2D" uid="uid://cyqv18fco8rrn" path="res://recursos/Projeto_Extinction/Character/Pause/all_pause.png" id="5_p2s3w"]
+[ext_resource type="AudioStream" uid="uid://cevkgvh8vldh2" path="res://recursos/Projeto_Extinction/effect_sound/one_walk_sound.mp3" id="5_u0vco"]
 [ext_resource type="AudioStream" uid="uid://d2goh2w7tifef" path="res://recursos/Projeto_Extinction/effect_sound/shoot_sound.mp3" id="6_5d5np"]
 [ext_resource type="PackedScene" uid="uid://c77bt34it6qdi" path="res://areas/hut_box.tscn" id="7_mtidp"]
 [ext_resource type="Texture2D" uid="uid://w0r0fhr267fo" path="res://recursos/Projeto_Extinction/textures/light.jpg" id="8_opqsw"]
@@ -53,6 +54,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 3]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animator/walk_sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_bb1y2"]
 length = 0.001
@@ -91,6 +104,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("animator/walk_sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_fneqe"]
@@ -175,6 +200,7 @@ libraries = {
 speed_scale = 0.3
 
 [node name="walk_sound" type="AudioStreamPlayer2D" parent="animator"]
+stream = ExtResource("5_u0vco")
 volume_db = 15.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -203,5 +229,3 @@ stream = ExtResource("6_5d5np")
 
 [node name="cooldown" type="Timer" parent="."]
 one_shot = true
-
-[node name="music_timer" type="Timer" parent="."]
