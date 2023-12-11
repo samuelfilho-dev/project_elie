@@ -61,4 +61,4 @@ func _on_dialog_area_body_entered(body):
 
 func _on_dialog_area_body_exited(body):
 	if body.name == "Player":
-		remove_child(_hud)
+		pass
